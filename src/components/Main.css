@@ -1,0 +1,70 @@
+
+.main {
+    background: #fff;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1)
+}
+
+h1{
+    text-align: center;
+}
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form input[type="text"] {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    min-width: 80%;
+}
+
+.form button[type="submit"] {
+    border: 1px solid #ccc;
+    height: 40px;
+    width: 40px;
+    background: #f04c64;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tasks{
+    margin-top: 30px;
+    
+}
+
+.tasks li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: 16px 0;
+}
+
+.tasks li:hover{
+    background: rgb(208, 208, 243);
+}
+
+.tasks div{
+    display: flex;
+    gap: 20px;
+}
+.edit, .close{
+    cursor: pointer;
+}
+
+.edit{
+    color: rgb(78, 179, 20);
+}
+.close{
+    color: rgb(180, 21, 21);
+}
+

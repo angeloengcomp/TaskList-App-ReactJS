@@ -1,7 +1,12 @@
+import Main from './components/Main'
 import React from 'react'
+import './App.css'
 
-export default function App(){
-  return(
-    <h1>Hello World! Partiu, dormir</h1>
+
+export default function App() {
+  return (
+    <>
+      <Main/>
+    </>
   )
 }
