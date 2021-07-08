@@ -3,16 +3,14 @@ import './Main.css'
 
 
 import { FaEdit, FaWindowClose } from 'react-icons/fa';
+import Form from './Form';
 
-import { FaPlus } from 'react-icons/fa'
 
 export default class Main extends Component {
     state = {
         newTask: '',
         tasks: [],
         index: -1,
-
-
     }
 
 
@@ -38,7 +36,7 @@ export default class Main extends Component {
         e.preventDefault()
         const { tasks, index } = this.state
         let { newTask } = this.state;
-        newTask = newTask.trim()
+        newTask = newTask.trim();
 
         const newTasks = [...tasks]
 
@@ -93,12 +91,12 @@ export default class Main extends Component {
         return (
             <div className="main">
                 <h1>Task List</h1>
-                <form action="#" className="form" onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} type="text" value={newTask} />
-                    <button type="submit">
-                        <FaPlus />
-                    </button>
-                </form>
+                <Form
+                    handleSubmit={this.handleSubmit}
+                    handleChange={this.handleChange}
+                    newTask = {newTask}
+                
+                />
                 <ul className="tasks">
                     {tasks.map((task, index) =>
                         <li key={task}>
