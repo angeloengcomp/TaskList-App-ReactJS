@@ -1,0 +1,34 @@
+
+
+.tasks{
+    margin-top: 30px;
+    
+}
+
+.tasks li{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 2px;
+    margin: 16px 0;
+}
+
+.tasks li:hover{
+    background: #BEBAD9;
+}
+
+.tasks div{
+    display: flex;
+    gap: 20px;
+}
+.edit, .close{
+    cursor: pointer;
+}
+
+.edit{
+    color: rgb(78, 179, 20);
+}
+.close{
+    color: rgb(180, 21, 21);
+}
+

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import './Main.css'
 
 
-import { FaEdit, FaWindowClose } from 'react-icons/fa';
 import Form from './Form';
+import Tasks from './Tasks';
+
 
 
 export default class Main extends Component {
@@ -15,17 +16,17 @@ export default class Main extends Component {
 
 
     // load localStorage
-    componentDidMount(){
+    componentDidMount() {
         const tasks = JSON.parse(localStorage.getItem('tasks'))
         if (!tasks) return;
-        this.setState({ tasks})
+        this.setState({ tasks })
     }
 
     // send to localStorage
     componentDidUpdate(prevProps, prevState) {
-        const {tasks}=this.state
+        const { tasks } = this.state
 
-        if(tasks === prevState.tasks) return;
+        if (tasks === prevState.tasks) return;
         localStorage.setItem('tasks', JSON.stringify(tasks))
     }
     // sended to localStorage
@@ -88,36 +89,23 @@ export default class Main extends Component {
 
     render() {
         const { newTask, tasks } = this.state
+        
         return (
             <div className="main">
                 <h1>Task List</h1>
                 <Form
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleChange}
-                    newTask = {newTask}
-                
+                    newTask={newTask}
+
                 />
-                <ul className="tasks">
-                    {tasks.map((task, index) =>
-                        <li key={task}>
-                            {task}
-                            <div>
 
-                                <FaEdit
-                                    onClick={(e) => this.handleEdit(e, index)}
-                                    className="edit"
-                                />
+                <Tasks
 
-                                <FaWindowClose
-                                    onClick={(e) => this.handleDelete(e, index)}
-                                    className="close"
-                                />
-
-                            </div>
-                        </li>
-
-                    )}
-                </ul>
+                    handleDelete={this.handleDelete}
+                    handleEdit={this.handleEdit}
+                    tasks={tasks}
+                />
             </div>
 
         )

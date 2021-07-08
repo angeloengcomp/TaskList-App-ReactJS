@@ -6,5 +6,9 @@
 
 body{
   font-family: sans-serif;
-  background-color: darkslateblue;
+  width:100vw;
+  height:100vh;
+  background-color: #49fcfc;
+  background-size: cover;
+  background-image: url(./assets/image/background.jpg);
 }
